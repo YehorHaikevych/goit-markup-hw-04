@@ -101,6 +101,21 @@ ol {
   color: #2e2f42;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link-studio {
+  position: relative;
+  color: #404bbf;
+}
+.nav-link-studio::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #404bbf;
 }
 .address {
   font-style: normal;
@@ -119,14 +134,21 @@ ol {
   color: #434455;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ====HERO STYLES==== */
 .hero {
   max-width: 1440px;
-  background: #2e2f42;
+  background-color: #2e2f42;
   margin-left: auto;
   margin-right: auto;
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/hero/people-office.png);
+  background-repeat: no-repeat;
 }
 .hero-container {
   text-align: center;
@@ -167,9 +189,21 @@ ol {
   gap: 24px;
 }
 .benefits-list-item {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
   width: calc((100% - 72px) / 4);
 }
-
+.logo-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 264px;
+  height: 112px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  background: #f4f4fd;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -221,6 +255,9 @@ ol {
   background: #fff;
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
 }
 .images {
   display: block;
@@ -249,8 +286,6 @@ ol {
 
 /* =========Our Portfolio======= */
 
-.our-portfolio {
-}
 .portfolio {
   font-weight: 700;
   font-size: 36px;
@@ -269,7 +304,35 @@ ol {
   row-gap: 48px;
 }
 .portfolio-list-item {
+  position: relative;
   width: calc((100% - 48px) / 3);
+  overflow: hidden;
+}
+.portfolio-cashless-payment {
+  display: none;
+  position: absolute;
+  width: 360px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-color: #4d5ae5;
+  transform: translateY(360px);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cashless-payment-text {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 40px 32px 164px 32px;
+
+  line-height: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+}
+.portfolio-list-item :hover .portfolio-cashless-payment {
+  display: block;
+  transform: translateY(0);
 }
 .portfolio-nema-list {
   padding: 32px 16px;
