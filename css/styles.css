@@ -58,11 +58,13 @@ ol {
 .nav-link:hover,
 .nav-link:focus {
   color: #404bbf;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
 .address-link:focus {
   color: #404bbf;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-padding {
   padding-top: 120px;
@@ -182,6 +184,7 @@ ol {
 .button-service:hover,
 .button-service:focus {
   background-color: #404bbf;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ===== BENEFITS ===== */
 .benefits-list {
@@ -223,6 +226,7 @@ ol {
   letter-spacing: 0.02em;
   color: #2e2f42;
   margin-bottom: 8px;
+  margin-top: 8px;
 }
 .our-benefits-description {
   font-size: 16px;
@@ -283,7 +287,26 @@ ol {
   color: #434455;
   text-align: center;
 }
+.team-icone-list {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8px;
+}
+.team-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
 
+.team-social-links:hover,
+.team-social-links:focus {
+  background-color: #404bbf;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* =========Our Portfolio======= */
 
 .portfolio {
@@ -304,36 +327,44 @@ ol {
   row-gap: 48px;
 }
 .portfolio-list-item {
-  position: relative;
   width: calc((100% - 48px) / 3);
-  overflow: hidden;
 }
-.portfolio-cashless-payment {
-  display: none;
-  position: absolute;
-  width: 360px;
-  height: 300px;
-  top: 0;
-  left: 0;
-  background-color: #4d5ae5;
-  transform: translateY(360px);
+.card-link {
+  display: block;
+  transition: box-shadow 250ms linear;
+}
+.card-link:hover,
+.card-link:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.cashless-payment-text {
-  display: block;
-  font-weight: 400;
-  font-size: 16px;
-  padding: 40px 32px 164px 32px;
-
+.thumb {
+  position: relative;
+  overflow: hidden;
+}
+.overaly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40px 32px 164px;
   line-height: 24px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
+  background-color: #4d5ae5;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-list-item :hover .portfolio-cashless-payment {
-  display: block;
-  transform: translateY(0);
+
+.card-link:hover .overaly,
+.card-link:focus .overaly {
+  transform: translateY(0%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .portfolio-nema-list {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
@@ -368,6 +399,9 @@ ol {
   background: #2e2f42;
   padding: 100px 0;
 }
+.page-footer-container {
+  display: flex;
+}
 .footer-description {
   font-weight: 400;
   font-size: 16px;
@@ -379,4 +413,36 @@ ol {
 .logo {
   display: inline-block;
   margin-bottom: 16px;
+}
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+.footer-social-links:hover,
+.footer-social-links:focus {
+  background-color: #31d0aa;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-icone-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+}
+.footer-list-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 16px;
+}
+.page-footer-lincs {
+  margin-left: 120px;
 }
